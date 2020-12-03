@@ -1,12 +1,9 @@
 version: '3'
 services:
-  vue-ui:
+  home-project:
     build:
       context: ./
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
-    container_name: vue-ui2
-    volumes:
-       - ./my-app:/usr/src/app/my-app
-       - /usr/src/app/my-app/node_modules
+      - "8080:80"
+    container_name: home-project
