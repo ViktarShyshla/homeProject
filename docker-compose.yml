@@ -7,3 +7,4 @@ services:
     ports:
       - "8080:80"
     container_name: home-project
+    image: viktarshyshla/homeproject_home-project
