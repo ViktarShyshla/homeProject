@@ -3,7 +3,7 @@
     <input
       :class="$style.input"
       v-model="message"
-      placeholder="Напишите текст"
+      placeholder="New task"
     />
   </div>
 </template>
@@ -16,6 +16,7 @@
     width: 20rem;
     height: 2rem;
     background:rgba($color: #dddddd, $alpha: 1.0);
+    
   }
 }
 </style>

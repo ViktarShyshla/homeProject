@@ -28,3 +28,9 @@ label {
     color: $dark-gray;
 }
 }
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}

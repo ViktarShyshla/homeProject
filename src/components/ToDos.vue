@@ -1,10 +1,13 @@
 <template>
   <div :class="$style.container">
-    <label>ToDos</label>
+    <div :class="$style.header">
+      <label>ToDos</label>
+    </div>
     <div :class="$style.content">
       <div id="todo-list-example">
-        <form :class="$style.input" v-on:submit.prevent="addNewTodo">
+        <form :class="$style.form">
           <Input
+            :class="$style.input"
             v-model="newTodoText"
             id="new-todo"
             placeholder="Например, покормить кота"
@@ -12,7 +15,8 @@
           <Button
             v-bind:title="message"
             :class="$style.button"
-            textButton="Добавить"
+            v-on:click.prevent="addNewTodo"
+            textButton="Create"
           />
         </form>
         <ul>
@@ -23,11 +27,6 @@
             v-on:remove="todos.splice(index, 1)"
           ></li>
         </ul>
-      </div>
-      <div :class="$style.list">
-        <li v-for="item in items" :key="item.message">
-          {{ item.title }}
-        </li>
       </div>
     </div>
   </div>
@@ -74,18 +73,33 @@ export default {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
+  .header {
+    background: $gray;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    label {
+      color: white;
+    }
+  }
   .content {
-    max-width: 30rem;
+    width: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .input {
+    .form {
       display: flex;
-
+      border: 0.1rem solid;
+      border-radius: 0.25rem;
+      input {
+        background: none;
+      }
       .button {
         color: rgb(255, 255, 255);
+        background: none;
         label {
           font-size: 1rem;
         }

@@ -1,14 +1,14 @@
 <template>
-  <HelloWorld />
+  <ToDos />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import ToDos from "./components/ToDos.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    ToDos,
   },
 };
 </script>
@@ -16,5 +16,6 @@ export default {
 <style>
 #app {
   width: 100%;
+  margin: 0;
 }
 </style>
